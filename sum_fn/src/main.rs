@@ -7,9 +7,11 @@ fn subtract(first_number: i32, second_number: i32) -> i32 {
 }
 
 fn main() {
-    let other_number: i32;
+    // variável mutável
+    let mut other_number: i32 = 12;
 
-    other_number = 12;
+    // variável imutável
+    //let other_number: i32 = 12;
 
     println!(
         "Quanto é a soma de: {} + {}? \n\nA soma é {}",
@@ -17,20 +19,47 @@ fn main() {
         2,
         sum(2, 3)
     );
-    println!("");
 
     println!(
-        "E quanto é {} + {}? \n\nResultado: {}",
+        "\nE quanto é {} + {}? \n\nResultado: {}",
         other_number,
         sum(2, 3),
         sum(other_number, sum(2, 3))
     );
-    println!("");
+
+    // impossibilitado de mudar a variável imutável
+    // ERROR: cannot mutate immutable variable `other_number`
+    // other_number = 40;
+
+    // modificando a variável mutável
+    other_number = 40;
 
     println!(
-        "E se diminuirmos {} de {}? \n\nResultado: {}",
+        "\nE se diminuirmos {} de {}? \n\nResultado: {}",
         sum(2, 3),
         other_number,
         subtract(other_number, sum(2, 3))
+    );
+
+    // Nesse caso não seria uma variável mutável pois usamos a chamada dela mesma para 'sombrear' novos valores
+    let shadow_num: i32 = 5;
+
+    println!(
+        "\nInicializando Sombreamento de variável: o valor atual de 'shadow_num' é: {}",
+        shadow_num
+    );
+
+    let shadow_num: i32 = shadow_num + 5;
+
+    println!(
+        "\nAdicionando 5 ao Sombreamento de variável: o valor atual de 'shadow_num' é: {}",
+        shadow_num
+    );
+
+    let shadow_num: i32 = shadow_num * 2;
+
+    println!(
+        "\nMultiplicando por 2 o Sombreamento de variável: o valor atual de 'shadow_num' é: {}",
+        shadow_num
     );
 }
