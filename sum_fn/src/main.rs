@@ -3,5 +3,5 @@ fn sum(first_number: i32, second_number: i32) -> i32 {
 }
 
 fn main() {
-    println!("{}", sum(2, 3));
+    println!("Quanto é a soma de: {} + {}?\nA soma é {}", 3, 2, sum(2, 3));
 }
