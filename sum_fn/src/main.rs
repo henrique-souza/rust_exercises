@@ -42,6 +42,8 @@ fn main() {
     );
 
     // Nesse caso não seria uma variável mutável pois usamos a chamada dela mesma para 'sombrear' novos valores
+    // variável não assinada, ou seja, 'u(bits)' não podem ser número negativo
+    // já variáveis assinadas 'i(bits)' podem ser número negativo
     let shadow_num: i32 = 5;
 
     println!(
@@ -62,4 +64,8 @@ fn main() {
         "\nMultiplicando por 2 o Sombreamento de variável: o valor atual de 'shadow_num' é: {}",
         shadow_num
     );
+
+    //let number_64: f64 = 4.0;
+
+    //let number_32: f32 = 5.0;
 }
