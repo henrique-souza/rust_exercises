@@ -11,7 +11,7 @@ fn main() {
     let mut other_number: i32 = 12;
 
     // variável imutável
-    //let other_number: i32 = 12;
+    // let other_number: i32 = 12;
 
     println!(
         "Quanto é a soma de: {} + {}? \n\nA soma é {}",
@@ -27,9 +27,11 @@ fn main() {
         sum(other_number, sum(2, 3))
     );
 
-    // impossibilitado de mudar a variável imutável
-    // ERROR: cannot mutate immutable variable `other_number`
-    // other_number = 40;
+    /*
+     * impossibilitado de mudar a variável imutável
+     * ERROR: cannot mutate immutable variable `other_number`
+     * other_number = 40;
+     */
 
     // modificando a variável mutável
     other_number = 40;
@@ -41,9 +43,11 @@ fn main() {
         subtract(other_number, sum(2, 3))
     );
 
-    // Nesse caso não seria uma variável mutável pois usamos a chamada dela mesma para 'sombrear' novos valores
-    // variável não assinada, ou seja, 'u(bits)' não podem ser número negativo
-    // já variáveis assinadas 'i(bits)' podem ser número negativo
+    /*
+     * Nesse caso não seria uma variável mutável pois usamos a chamada dela mesma para 'sombrear' novos valores
+     * variável não assinada, ou seja, 'u(bits)' não podem ser número negativo
+     * já variáveis assinadas 'i(bits)' podem ser número negativo
+     */
     let shadow_num: i32 = 5;
 
     println!(
@@ -65,7 +69,7 @@ fn main() {
         shadow_num
     );
 
-    //let number_64: f64 = 4.0;
+    // let number_64: f64 = 4.0;
 
-    //let number_32: f32 = 5.0;
+    // let number_32: f32 = 5.0;
 }
